@@ -1,0 +1,31 @@
+use('platzi_store')
+
+
+//Borrar el contenido de la coleccion
+db.productos.drop()
+
+/*  insertar mas de un produto a la vez 
+    utilizando ordeed:false que deja fuera los 
+    registros con Id iguales y continua la ejecución
+ */
+
+db.productos.insertMany(
+    [
+        {
+            name: 'prodcuto1',
+            price: 10.5,
+            stock: 100,
+            status: true
+        },
+        {
+            name:'producto2',
+            price: 12,
+            stock: 124,
+            status: true
+        }
+    ],{
+        ordered: true
+    }
+)
+
+db.productos.find()

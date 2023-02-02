@@ -1,0 +1,63 @@
+use('sample_training');
+
+/**
+incrementa en mil la poblacion
+*/
+db.zips.updateMany(
+    //Query
+    {city: 'CLEVELAND'},
+    //operation update
+    {
+        $set: {
+            'loc.z': '1000'
+        }
+    }
+)
+
+/**
+Agrega un nuevo a tributo a los
+objetos que cumplen la condicion *
+db.zips.updateMany(
+    //Query
+    {city: 'CLEVELAND'},
+    //operation update
+    {
+        $set: {
+            newAttr: "nuevo Atributo"
+        }
+    }
+)
+*/
+
+/**
+Renombra un atributo sin alterar su valor, 
+de los objetos que cumplen la condicion
+*
+db.zips.updateMany(
+    //Query
+    {city: 'CLEVELAND'},
+    //operation update
+    {
+        $rename: {
+            newAttr: 'campoRenombrado'
+        }
+    }
+)
+*/
+
+/**
+$unset 
+Elimina un atributo 
+*
+db.zips.updateMany(
+    //Query
+    {city: 'CLEVELAND'},
+    //operation update
+    {
+        $unset: {
+            campoRenombrado: 1000
+        }
+    }
+)
+*/
+

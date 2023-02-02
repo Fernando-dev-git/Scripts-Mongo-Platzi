@@ -1,0 +1,20 @@
+use('platzi_store')
+
+db.productos.find()
+
+/*
+    Editar un solo registro
+*/
+db.productos.updateOne(
+    // Query
+    {
+        '_id': ObjectId('63d201eeb63696ca437259f4')
+    }, 
+    // Changes => operators
+    {
+        $set: {
+            name: 'Coca cola',
+            stock: 250
+        }
+    }
+);
