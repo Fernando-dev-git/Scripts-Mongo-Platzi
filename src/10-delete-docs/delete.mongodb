@@ -1,0 +1,10 @@
+use("platzi_store")
+
+/*Elimna un registro que tenga el _id con el valor. 1*/
+db.products.deleteOne({ _id: 1 })
+
+/** Elinima varios registros que tengan el campo valor price:100 */
+db.products.deleteMany({ price: 100 })
+
+/**Elimna todos los documentos en este caso Products */
+db.products.drop()

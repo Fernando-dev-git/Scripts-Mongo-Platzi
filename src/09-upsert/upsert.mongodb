@@ -1,0 +1,19 @@
+use("platzi_store")
+
+/* 
+Upsert busca un registro en caso de no existir lo crea
+pero si existe lo actualiza 
+*/
+db.iot.updateOne({
+  sensor: "A001",
+  date: "2022-01-05",
+}, {
+  $push: {
+    readings: {
+        date: new Date(),
+        pos: 5678
+    }
+    }
+  }, {
+  upsert: true
+})
