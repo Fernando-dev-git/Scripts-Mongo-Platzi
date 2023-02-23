@@ -1,0 +1,35 @@
+use("platzi_store")
+
+/* $in funciona validando que el
+    objeto o array tengan una o otro de las propiedadas
+    que recibe como paramtro
+*/
+// db.inventory.find({ qty: { $in: [20, 25]} })
+//db.inventory.find({ tags: { $in: ["book", "electronics"]} })
+
+
+/* Funcion $nin retorna las colecciones que 
+    no tengan ninguno de los parametros que recibe
+    funciona en Objetos y Arrays
+*/
+// db.inventory.find({ qty: { $nin: [20, 25]} })
+// db.inventory.find({ tags: { $nin: ["book", "electronics"]} })
+
+/* Funcion que retorna los las collections que tengan 
+    los elementos que recibe como propiedades
+*/
+// db.inventory.find({ tags: {$all: ["book", "school"]} })
+
+/* La funcion $size valida el tamaño de un array */
+// db.inventory.find({ tags: {$size: 2} })
+
+/* Funcion $elemMatch busqueda esacta con un solo elemento */
+// db.survey.find({ results: { $elemMatch: { product: "xyz" }} })
+/*db.survey.find({
+  results:{
+    $elemMatch: {
+      product: "xyz",
+      score: { $gte: 7 }
+    }}
+  })
+  */

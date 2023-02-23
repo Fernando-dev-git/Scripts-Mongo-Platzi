@@ -1,0 +1,12 @@
+use("sample_training")
+/**
+Projection in Mongo Muestra o Oculta un campo en la qwery
+    1: Muestra la Propiedad
+    0: Oculta la Propiedad
+*/
+db.trips.find(
+  // query
+  { tripduration: { $gte: 500 } },
+  // projection
+  { tripduration: 1, usertype: 1 }
+)
